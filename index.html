@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英単語アプリ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#84fab0">
+</head>
+<body>
+    <div id="main-container">
+        <h1>英単語アプリ</h1>
+        
+        <div id="grade-selection-screen">
+            <h2>学年を選んでください</h2>
+            <div id="grade-buttons"></div>
+        </div>
+        
+        <div id="quiz-screen" class="hidden">
+            <button id="back-button">戻る</button>
+            <div id="word-card">
+                <div id="question-display"></div>
+            </div>
+            <div id="answer-options-container"></div>
+            <div id="feedback-container" class="hidden">
+                <p id="feedback-text"></p>
+                <p id="correct-answer-text"></p>
+            </div>
+            <div id="quiz-controls">
+                <button id="next-word-button" class="hidden">次へ</button>
+            </div>
+            <div id="progress-display"></div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h2>お疲れ様でした！</h2>
+            <p>全ての問題が終わりました。</p>
+            <button id="restart-button">もう一度同じ学年で挑戦</button>
+            <button id="home-button">学年選択に戻る</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('ServiceWorker registration failed: ', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

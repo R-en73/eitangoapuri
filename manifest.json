@@ -1,0 +1,21 @@
+{
+  "name": "英単語アプリ",
+  "short_name": "英単語",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#8fd3f4",
+  "theme_color": "#84fab0",
+  "description": "シンプルな英単語学習アプリです。",
+  "icons": [
+    {
+      "src": "192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
